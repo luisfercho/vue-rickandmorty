@@ -73,6 +73,27 @@
         </footer>
       </div>
     </div>
+    <footer class="footer" style="margin-top:20px">
+      <div class="content has-text-centered">
+        <p>
+          <strong>R&M Characters</strong>
+          by
+          <a href="https://github.com/luisfercho" target="_blank">
+            Luis Fernando Cifuentes
+          </a>
+          <br>
+          <b>GitHub Repo:</b>
+          <a href="https://github.com/luisfercho/vue-rickandmorty" target="_blank">
+            Go to repo
+          </a>
+          <br>
+          Aplicación del curso
+          <a href="https://codigofacilito.com/cursos/rest-api-vue" target="_blank">
+            Taller para consultar datos de una API con Vue
+          </a>
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -143,5 +164,7 @@ export default {
 </script>
 
 <style>
-
+  a{
+    text-decoration: underline;
+  }
 </style>
