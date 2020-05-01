@@ -10,8 +10,8 @@
                 <h3 class="title is-size-4">
                     {{ character.name }}
                 </h3>
-                <button class="button is-success is-small is-rounded ">
-                    Ver mas
+                <button class="button is-success is-small is-rounded" @click="showMore(character.id)">
+                    Show more...
                 </button>
             </div>
         </div>
@@ -22,6 +22,20 @@
     export default {
         props:[
             'character'
-        ]
+        ],
+        methods:{
+          showMore(id){
+            this.$emit("showModal",id);
+          }
+        }
     }
 </script>
+
+<style scoped="">
+  .card-header{
+      background: #404040;
+  }
+  .card-header img{
+    margin:auto
+  }
+</style>

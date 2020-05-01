@@ -27,3 +27,7 @@ yarn run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### Demo:
+[Live Demo](https://luisfercho.github.io/vue-rickandmorty/)
