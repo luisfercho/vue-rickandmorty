@@ -1,3 +1,3 @@
 module.exports = {
-  publicPath: '/vue-rickandmorty/'
+  publicPath: '/vue-rickandmorty/dist/'
 }
