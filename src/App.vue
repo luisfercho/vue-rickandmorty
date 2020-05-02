@@ -98,7 +98,6 @@
 </template>
 
 <script>
-  import axios from "axios";
   import Character from "./components/Character";
 export default {
   name: 'app',
@@ -124,12 +123,13 @@ export default {
           page:this.page,
           name:this.search
       };
-      axios.get("https://rickandmortyapi.com/api/character/",{params})
+      let response = this.$api.characters(params)
+
+      response
         .then(res=>{
           this.characters = res.data.results;
           this.pages  =res.data.info.pages;
         })
-
         .catch(err=>{
           // eslint-disable-next-line
           console.log(err);
@@ -138,9 +138,7 @@ export default {
         })
     },
     changePage(page){
-
       this.page = (page <= 0 || page > this.pages) ? this.page : page;
-
       this.fetch();
     },
     searchData(){
@@ -155,7 +153,7 @@ export default {
       this.fetchModal(id)
     },
     async fetchModal(id){
-      let results = await axios.get(`https://rickandmortyapi.com/api/character/${id}/`);
+      let results = await this.$api.character(id);
       this.modal = true;
       this.currentCharacter = results.data;
     }

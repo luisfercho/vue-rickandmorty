@@ -1,7 +1,10 @@
 import Vue from 'vue';
-import App from './App.vue';
 import "bulma";
 import firebase from 'firebase';
+
+import API from './services/api'
+
+import App from './App.vue';
 
 Vue.config.productionTip = false;
 
@@ -12,6 +15,8 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+Vue.use(API);
 
 new Vue({
   render: h => h(App),
